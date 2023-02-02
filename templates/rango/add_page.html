@@ -5,8 +5,7 @@
     <title>Rango</title>
 </head>
 <body>
-    <h1>Add a Category</h1>
-    <form id='category_form' method='POST' action="/rango/add_category/">
+    <form id='add_page_form' method="post" action="/rango/category/{{ category.slug }}/add_page/">
         {% csrf_token %}
         {% for field in form.hidden_fields %}
             {{ hidden }}
@@ -16,7 +15,7 @@
             {{ field.help_text }}
             {{ field }}
         {% endfor %}
-        <input type="submit" name="submit" value="Create Category" />
+        <input type='submit' name='submit' value='Add Page'>
     </form>
 </body>
 </html>
